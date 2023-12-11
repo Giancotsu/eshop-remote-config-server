@@ -1,21 +1,18 @@
 # ==============================================================
-# = Eureka Parameters
+# = Eureka Peer 1 Parameters
 # ==============================================================
 
 
 server:
-  port: 8761
+  port: 8765
   tomcat:
     threads:
       max: 5
 
 eureka:
   instance:
-    hostname: localhost
-    preferIpAddress: false
+    hostname: peer1
 
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://peer2:8766/eureka/, http://peer3:8767/eureka/
