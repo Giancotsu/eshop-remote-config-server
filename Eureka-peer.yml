@@ -1,0 +1,66 @@
+# ==============================================================
+# = Eureka Peer 1 Parameters
+# ==============================================================
+
+spring:
+  config:
+    activate:
+      on-profile: peer1
+
+server:
+  port: 8765
+  tomcat:
+    threads:
+      max: 5
+
+eureka:
+  instance:
+    hostname: peer1
+
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8766/eureka/, http://peer3:8767/eureka/
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: peer2
+
+server:
+  port: 8766
+  tomcat:
+    threads:
+      max: 5
+
+eureka:
+  instance:
+    hostname: peer2
+
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8765/eureka/, http://peer3:8767/eureka/
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: peer3
+
+server:
+  port: 8767
+  tomcat:
+    threads:
+      max: 5
+
+eureka:
+  instance:
+    hostname: peer3
+
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8766/eureka/, http://peer1:8765/eureka/
+
+---
