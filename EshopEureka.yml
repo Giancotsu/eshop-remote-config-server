@@ -1,0 +1,24 @@
+# ==============================================================
+# = Eureka Parameters
+# ==============================================================
+eureka:
+  instance:
+    hostname: localhost
+
+    preferIpAddress: false
+  # ==============================================================
+  # = Server settings
+  # ==============================================================
+  server:
+    enableSelfPreservation: true
+    responseCacheUpdateIntervalMs: 60000
+    evictionIntervalTimerInMs: 30000
+    waitTimeInMsWhenSyncEmpty: 5
+  # ==============================================================
+  # = Client settings
+  # ==============================================================
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
