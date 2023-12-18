@@ -6,17 +6,18 @@
     activate:
       on-profile: peer1
   application:
-    name: Peer1
+    name: EurekaServer
 
 server:
   port: 8765
-  tomcat:
-    threads:
-      max: 5
 
 eureka:
   instance:
     hostname: peer1
+    metadataMap:
+      zone: zone1
+      preferIpAddress: true
+      instanceId: ${spring.application.name}-1
 
   client:
     serviceUrl:
