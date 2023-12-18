@@ -1,11 +1,12 @@
 # ==============================================================
 # = Eureka Peers Parameters
 # ==============================================================
-
-spring:
+ spring:
   config:
     activate:
       on-profile: peer1
+  application:
+    name: Peer1
 
 server:
   port: 8765
