@@ -6,16 +6,16 @@ spring:
     name: EurekaPeer3
 
 server:
-  port: 8767
+  port: 8763
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer3
     metadataMap:
-      zone: zone3
+      zone: zone1
       preferIpAddress: true
       instanceId: ${spring.application.name}-{server.port}
 
   client:
     serviceUrl:
-      defaultZone: http://localhost:8766/eureka/, http://localhost:8765/eureka/
+      defaultZone: http://localhost:8765/eureka/, http://localhost:8766/eureka/

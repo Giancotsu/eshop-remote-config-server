@@ -6,11 +6,11 @@ spring:
     name: EurekaPeer1
 
 server:
-  port: 8765
+  port: 8761
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer1
     metadataMap:
       zone: zone1
       preferIpAddress: true
