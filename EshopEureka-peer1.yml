@@ -10,10 +10,10 @@ server:
 
 eureka:
   instance:
-    hostname: EshopEureka
+    hostname: localhost
     metadataMap:
       zone: zone1
-      preferIpAddress: false
+      preferIpAddress: true
       instanceId: ${spring.application.name}-{server.port}
 
   client:
