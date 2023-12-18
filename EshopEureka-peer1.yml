@@ -1,21 +1,21 @@
 # ==============================================================
-# = Eureka Peer2 Parameters
+# = Eureka Peer1 Parameters
 # ==============================================================
 spring:
   application:
-    name: peer2
+    name: EurekaPeer1
 
 server:
-  port: 8766
+  port: 8765
 
 eureka:
   instance:
-    hostname: peer2
+    hostname: localhost
     metadataMap:
-      zone: zone2
+      zone: zone1
       preferIpAddress: true
       instanceId: ${spring.application.name}-{server.port}
 
   client:
     serviceUrl:
-      defaultZone: http://peer1:8765/eureka/, http://peer3:8767/eureka/
+      defaultZone: http://peer2:8766/eureka/, http://peer3:8767/eureka/
