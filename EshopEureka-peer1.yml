@@ -13,7 +13,7 @@ eureka:
     hostname: EshopEureka
     metadataMap:
       zone: zone1
-      preferIpAddress: true
+      preferIpAddress: false
       instanceId: ${spring.application.name}-{server.port}
 
   client:
