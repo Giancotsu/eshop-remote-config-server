@@ -3,7 +3,7 @@
 # ==============================================================
 spring:
   application:
-    name: EurekaServer
+    name: peer3
 
 server:
   port: 8767
